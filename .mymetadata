@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="shopitfs"
+  id="myeclipse.1422255023926"
+  context-root="/shopitfs"
+  j2ee-spec="6.0"
+  archive="shopitfs.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
