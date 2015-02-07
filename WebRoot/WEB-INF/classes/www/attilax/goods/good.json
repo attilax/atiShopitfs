@@ -1,0 +1,11 @@
+{
+"method":"addGoods",
+"param":{
+   "shop_id": 8,    
+  "goods_name": "prod999",  
+  "goods_intro": "商品介绍：商品介绍：商品介绍：",   
+  "goods_price": 100,   
+   "goods_thumb": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+ }
+
+}
