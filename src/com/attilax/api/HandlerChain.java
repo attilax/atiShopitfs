@@ -50,6 +50,7 @@ public class HandlerChain {
 	public static Logger logger = Logger.getLogger("apiReceiverLoger");
 	  public static Map mp=new ConcurrentHashMap <String,Handler>();
 	  public static Session sess;
+	  public static Logger logger2 = Logger.getLogger("HandlerChainClass");
 	  
 	  @Inject
 	public  Hbx hbx;
@@ -223,6 +224,8 @@ Ilogx logx=new Ilogx(){
 
 		} catch (Exception e) {
 			logReq_api(req, e.getMessage());
+			core.log(e);
+			filex.saveLog(e, "c:\\e");
 			
 			JsonConfig config=new JsonConfig();
 			//设置循环策略为忽略    解决json最头疼的问题 死循环

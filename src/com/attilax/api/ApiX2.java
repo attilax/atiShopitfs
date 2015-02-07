@@ -8,16 +8,18 @@ import com.attilax.cfg.ApiInier;
 import com.attilax.io.filex;
 
  import static  com.attilax.core.*;
+
 import java.util.*;
 import java.net.*;
 import java.io.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.log4j.Logger;
+
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.CycleDetectionStrategy;
-
 import www.Hbx4shp;
 /**
  * @author  attilax 老哇的爪子
@@ -53,7 +55,7 @@ String data=" method ( {'p1':'xxx','p2',33} )  ";
 
 	}
 	
-	
+	 public static Logger logger2 = Logger.getLogger("apix2loger");
 	public String handleReq(final HttpServletRequest req) throws Exception {
 		System.out.println("a");
 		// core.logMap(req.getParameterMap());
@@ -93,6 +95,9 @@ String data=" method ( {'p1':'xxx','p2',33} )  ";
 			// j5937 o7l 老哇的爪子 Attilax
 
 		} catch (Exception e) {
+			core.log(e);
+			filex.saveLog(e, "c:\\e");
+			logger2.info(e);
 			logReq_api(req, e.getMessage());
 			JsonConfig config=new JsonConfig();
 			//设置循环策略为忽略    解决json最头疼的问题 死循环

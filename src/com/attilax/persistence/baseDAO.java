@@ -15,6 +15,7 @@ import com.attilax.ref.refx;
  
  
  
+
 import java.lang.reflect.Field;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -25,13 +26,16 @@ import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Id;
+
 import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.exception.DataException;
+
 import static org.hibernate.criterion.Example.create;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,6 +69,8 @@ public static void main(String[] args) {
 public 	String testHql = "";
 public  SessionFactory fac;
 public   Session getSession() {
+	if(fac==null)
+		throw new RuntimeException(" db fac is null");
 	// attilax 老哇的爪子 i4148 o78
 	retryRzt rzt = new retryRzt();
 	return new retryO7<Session>(5, rzt) {
@@ -72,6 +78,7 @@ public   Session getSession() {
 		@Override
 		public Boolean item(Object t) throws Exception {
 			// attilax 老哇的爪子 下午11:49:37 2014年6月9日
+			
 			final Session sess =fac.openSession();
 			if(sess==null)return false;
 			this.setResetObj(sess);
