@@ -55,6 +55,7 @@ String data=" method ( {'p1':'xxx','p2',33} )  ";
 	
 	
 	public String handleReq(final HttpServletRequest req) throws Exception {
+		System.out.println("a");
 		// core.logMap(req.getParameterMap());
 		try {
 			logReq(req);

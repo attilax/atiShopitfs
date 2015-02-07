@@ -26,6 +26,13 @@ import com.attilax.withdraw.Withdraw;
  *
  */
 public class ApiInier {
+	public static void main(String[] args) {
+		try {
+			
+		} catch (Throwable e) {
+			 
+		}
+	}
 
 		/**
 		@author attilax 老哇的爪子
@@ -41,7 +48,8 @@ public class ApiInier {
 				 JSONObject jo=JSONObject.fromObject(arg.toString());
 				  RefX.copyProperties(jo,g);
 				  g.setBrandId(1);
-				  g.setGoodsThumb("uploadfiles/goods/2010/11/29/thumb_2010112903480063.jpg");
+				  if(g.getGoodsThumb()==null || g.getGoodsThumb().trim().length()==0)
+					  g.setGoodsThumb("uploadfiles/goods/2010/11/29/thumb_2010112903480063.jpg");
 				  if(g.getCatId()==null)
 					  g.setCatId(6);
 				  g.setFavpv(0);

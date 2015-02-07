@@ -192,6 +192,7 @@ Ilogx logx=new Ilogx(){
 	}};
 
 	public String handleReq(final HttpServletRequest req) throws Exception {
+		System.out.println("a");
 		// core.logMap(req.getParameterMap());
 		try {
 			logReq(req);
@@ -323,10 +324,10 @@ protected void logReq(final HttpServletRequest req) {
 		String r="";
 		try {
 			r = hd.handleReq(parameter).toString();
-		} catch (Exception e) {
+		} catch (Throwable e) {
 			//  attilax 老哇的爪子 4_m_0   o8r   
 			e.printStackTrace();
-			core.warn(e);
+		//	core.warn(e);
 			throw new RuntimeException(e);
 		}
 		return r;

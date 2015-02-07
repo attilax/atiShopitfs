@@ -20,6 +20,8 @@ public class Hbx4shp extends Hbx {
 		Hbx4shp c=	 new Hbx4shp();
 		c.testHql="from MallUsers";
 		c.fac=HibernateSessionFactory.sessionFactory;
+		if( c.fac==null) 
+			c.fac=www.HibernateSessionFactory.sessionFactory;
 		return c;
 		
 	}

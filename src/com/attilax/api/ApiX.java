@@ -5,6 +5,8 @@
 package com.attilax.api;
 import com.attilax.core;
 import com.attilax.cfg.ApiInier;
+import com.attilax.persistence.baseDAO;
+import com.attilax.util.HibernateSessionFactory;
 
  import static  com.attilax.core.*;
 import java.util.*;
@@ -22,6 +24,8 @@ public class ApiX extends HandlerChain {
 	public ApiX()
 	{
 		super();
+		//if(this.)
+		
 	}
 	public static	String defOkRet= "{\"errcode\":0,\"errmsg\":\"ok\" }";
 	/**
@@ -35,6 +39,8 @@ public class ApiX extends HandlerChain {
 		// attilax 老哇的爪子  i_0_7   o9n 
 		ApiX c=new ApiX();
 		c.hbx=Hbx4shp.getStance();
+		
+	//	if(baseDAO.)
 
 	}
 	//  attilax 老哇的爪子 i_0_7   o9n   

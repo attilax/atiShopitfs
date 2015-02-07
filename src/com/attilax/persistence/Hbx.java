@@ -126,7 +126,8 @@ public class Hbx  extends baseDAO{
 	
 	
 	public List findBySql(String sql) {
-		SQLQuery SQLQueryx =  getSession().createSQLQuery(sql);
+		Session session2 = getSession();
+		SQLQuery SQLQueryx =  session2.createSQLQuery(sql);
 		//SQLQueryx.addEntity(GvPlayRecord.class) ;		
 		SQLQueryx.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 	 if(sql.toLowerCase().trim().startsWith("update") || sql.toLowerCase().trim().startsWith("delete") || sql.toLowerCase().trim().startsWith("insert"))
